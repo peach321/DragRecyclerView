@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     MyRecyclerView recyclerView;
     RecyclerViewAdapter adapter;
     List<Bean> list = new ArrayList<>();
-    //处理拖拽和滑动的实现类
     ItemTouchHelper itemTouchHelper;
 
     @Override
@@ -39,13 +38,11 @@ public class MainActivity extends AppCompatActivity {
                 if (vh.getLayoutPosition()!=list.size()-1) {
                     Toast.makeText(MainActivity.this,"长按了",Toast.LENGTH_SHORT).show();
                     itemTouchHelper.startDrag(vh);
-                    //VibratorUtil.Vibrate(getActivity(), 70);   //震动70ms
                 }
             }
         });
 
         itemTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallBack(adapter));
-        //和RecyclerView进行关联
         itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 

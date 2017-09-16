@@ -37,29 +37,29 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.slidingItemView.setOnHideViewClickListener(new SlidingItemView.OnHideViewClickListener() {
             @Override
             public void onClick1(View view, int pos) {
-                Toast.makeText(context,"position="+pos+"操作1",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "position=" + pos + "操作1", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onClick2(View view, int pos) {
-                Toast.makeText(context,"position="+pos+"操作2",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "position=" + pos + "操作2", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onClick3(View view, int pos) {
-                Toast.makeText(context,"position="+pos+"操作3",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "position=" + pos + "操作3", Toast.LENGTH_SHORT).show();
             }
         });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,"id+"+list.get(position).getId()+"position="+position,Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "id+" + list.get(position).getId() + "position=" + position, Toast.LENGTH_SHORT).show();
             }
         });
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Toast.makeText(context,"长按了",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "长按了", Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -83,7 +83,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.title);
             image = (ImageView) itemView.findViewById(R.id.image);
-            slidingItemView= (SlidingItemView) itemView.findViewById(R.id.item_view);
+            slidingItemView = (SlidingItemView) itemView.findViewById(R.id.item_view);
         }
     }
 
@@ -93,9 +93,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     OnItemClickListener onItemClickListener;
 
-    public interface OnItemClickListener{
-        void onItemClick(MyViewHolder holder,int position);
-        void onItemLongClick(MyViewHolder holder,int position);
+    public interface OnItemClickListener {
+        void onItemClick(MyViewHolder holder, int position);
+
+        void onItemLongClick(MyViewHolder holder, int position);
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
